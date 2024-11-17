@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="expense-form">
+      <div id="notification" class="hidden"></div>
+      <h1>Expense Tracker</h1>
+      <div class="section">
+        <h2>Income</h2>
+        <div class="input-group">
+          <label for="income-description">Description</label>
+          <input
+            type="text"
+            id="income-description"
+            placeholder="e.g. Salary"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="income-amount">Amount ($)</label>
+          <input type="number" id="amount-input" placeholder="e.g. 5000" />
+        </div>
+
+        <div class="button-group">
+          <button onclick="addIncome()">Add Income</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Expenses</h2>
+        <div class="input-group">
+          <label for="expense-description">Description</label>
+          <input type="text" id="expense-input" placeholder="e.g. Groceries" />
+        </div>
+
+        <div class="input-group">
+          <label for="expense-category">Category</label>
+          <select name="" id="category-input">
+            <option value="groceries">Groceries</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="transportation">Transportation</option>
+            <option value="medical">Medical</option>
+            <option value="others">Others</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="expense-amount">Amount ($)</label>
+          <input type="number" id="expense-amount" placeholder="e.g. 500" />
+        </div>
+        <div class="button-group">
+          <button onclick="addExpense()">Add Expense</button>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <h2>Transaction History</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Amount ($)</th>
+              <th>Type</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="transaction-history"></tbody>
+        </table>
+      </div>
+
+      <div class="summary">
+        <h2>Budget Summary</h2>
+        <p>Total Income: <span id="total-income">0</span></p>
+        <p>Total Expenses: <span id="total-expense">0</span></p>
+        <p>Balance: <span id="balance">0</span></p>
+      </div>
+
+      <div class="clear-button-group">
+        <button onclick="clearInput()">Clear All</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
